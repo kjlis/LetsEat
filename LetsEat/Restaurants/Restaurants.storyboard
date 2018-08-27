@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IiR-lg-lIe">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Restaurant List View Controller-->
+        <scene sceneID="SQt-At-u80">
+            <objects>
+                <viewController id="IiR-lg-lIe" customClass="RestaurantListViewController" customModule="LetsEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kFB-ix-SnB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ekF-i0-uzU">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="s7g-6T-9ZS">
+                                    <size key="itemSize" width="375" height="323"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="restaurantCell" id="iLe-Xe-Mx7" customClass="RestaurantCell" customModule="LetsEat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="323"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="323"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Njp-FD-2ZC">
+                                                    <rect key="frame" x="11" y="60" width="353" height="200"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="american" translatesAutoresizingMaskIntoConstraints="NO" id="iQi-dl-mau">
+                                                            <rect key="frame" x="0.0" y="0.0" width="353" height="200"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="200" id="0k8-fl-KKD"/>
+                                                        <constraint firstItem="iQi-dl-mau" firstAttribute="leading" secondItem="Njp-FD-2ZC" secondAttribute="leading" id="Cea-8K-p81"/>
+                                                        <constraint firstAttribute="bottom" secondItem="iQi-dl-mau" secondAttribute="bottom" id="D3X-jg-obV"/>
+                                                        <constraint firstAttribute="trailing" secondItem="iQi-dl-mau" secondAttribute="trailing" id="kM5-dT-rxq"/>
+                                                        <constraint firstItem="iQi-dl-mau" firstAttribute="top" secondItem="Njp-FD-2ZC" secondAttribute="top" id="nvD-Wp-i13"/>
+                                                        <constraint firstAttribute="width" constant="353" id="qwU-RG-oLL"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoS-jz-4Of">
+                                                    <rect key="frame" x="18" y="16" width="339" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="dLT-8M-6Dy"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucc-tu-6DP">
+                                                    <rect key="frame" x="18" y="40" width="339" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="igu-ax-flH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="14"/>
+                                                    <color key="textColor" name="LetsEat Dark Gray"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8sK-WG-Zqs">
+                                                    <rect key="frame" x="75" y="263" width="224" height="56"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Available Times" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUX-yB-Y5S">
+                                                            <rect key="frame" x="0.0" y="2" width="224" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="HVz-eU-rrD"/>
+                                                                <constraint firstAttribute="height" constant="21" id="X7E-By-pCb"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="17"/>
+                                                            <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="X2e-u3-6SF">
+                                                            <rect key="frame" x="0.0" y="27" width="224" height="27"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmn-IS-f2r">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="27"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                                                                    <state key="normal" title="7:30PM" backgroundImage="time-bg">
+                                                                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GX-K3-JL6">
+                                                                    <rect key="frame" x="78" y="0.0" width="68" height="27"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                                                                    <state key="normal" title="7:30PM" backgroundImage="time-bg">
+                                                                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggf-TB-G8b">
+                                                                    <rect key="frame" x="156" y="0.0" width="68" height="27"/>
+                                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                                                                    <state key="normal" title="7:30PM" backgroundImage="time-bg">
+                                                                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                </button>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="27" id="erE-9W-rYh"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="27" id="xLP-we-oHh"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="X2e-u3-6SF" firstAttribute="leading" secondItem="8sK-WG-Zqs" secondAttribute="leading" id="14t-nm-BRU"/>
+                                                        <constraint firstItem="mUX-yB-Y5S" firstAttribute="top" secondItem="8sK-WG-Zqs" secondAttribute="top" constant="2" id="8wo-cC-D2i"/>
+                                                        <constraint firstAttribute="trailing" secondItem="mUX-yB-Y5S" secondAttribute="trailing" id="AD7-8d-mhy"/>
+                                                        <constraint firstAttribute="height" constant="56" id="GXC-8V-hc0"/>
+                                                        <constraint firstAttribute="trailing" secondItem="X2e-u3-6SF" secondAttribute="trailing" id="jOu-KE-EpM"/>
+                                                        <constraint firstAttribute="width" constant="224" id="lN5-t9-P0Y"/>
+                                                        <constraint firstItem="mUX-yB-Y5S" firstAttribute="leading" secondItem="8sK-WG-Zqs" secondAttribute="leading" id="nCu-uD-pod"/>
+                                                        <constraint firstItem="X2e-u3-6SF" firstAttribute="top" secondItem="mUX-yB-Y5S" secondAttribute="bottom" constant="4" id="vQZ-zj-Y5b"/>
+                                                        <constraint firstItem="mUX-yB-Y5S" firstAttribute="centerX" secondItem="8sK-WG-Zqs" secondAttribute="centerX" id="xrb-8Y-qC6"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="RoS-jz-4Of" firstAttribute="leading" secondItem="iLe-Xe-Mx7" secondAttribute="leadingMargin" constant="10" id="7e4-FB-BGs"/>
+                                            <constraint firstItem="Ucc-tu-6DP" firstAttribute="leading" secondItem="iLe-Xe-Mx7" secondAttribute="leadingMargin" constant="10" id="7n4-Py-NOr"/>
+                                            <constraint firstItem="RoS-jz-4Of" firstAttribute="top" secondItem="iLe-Xe-Mx7" secondAttribute="topMargin" constant="8" id="FLm-Fq-A1h"/>
+                                            <constraint firstItem="Ucc-tu-6DP" firstAttribute="top" secondItem="RoS-jz-4Of" secondAttribute="bottom" constant="5" id="I6X-dZ-bXE"/>
+                                            <constraint firstItem="Njp-FD-2ZC" firstAttribute="top" secondItem="Ucc-tu-6DP" secondAttribute="bottom" constant="4" id="anG-wb-9bN"/>
+                                            <constraint firstItem="8sK-WG-Zqs" firstAttribute="top" secondItem="Njp-FD-2ZC" secondAttribute="bottom" constant="3" id="dSE-1d-zBT"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Ucc-tu-6DP" secondAttribute="trailing" constant="10" id="dbN-eA-2a3"/>
+                                            <constraint firstItem="Njp-FD-2ZC" firstAttribute="centerX" secondItem="iLe-Xe-Mx7" secondAttribute="centerX" id="eDq-RV-cXm"/>
+                                            <constraint firstItem="8sK-WG-Zqs" firstAttribute="centerX" secondItem="iLe-Xe-Mx7" secondAttribute="centerX" id="wGt-vo-t22"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="RoS-jz-4Of" secondAttribute="trailing" constant="10" id="wuI-VQ-bU4"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imgRestaurant" destination="iQi-dl-mau" id="krj-n7-gDt"/>
+                                            <outlet property="lblCuisine" destination="Ucc-tu-6DP" id="Rui-g1-vSZ"/>
+                                            <outlet property="lblTitle" destination="RoS-jz-4Of" id="gaw-D4-OgP"/>
+                                            <segue destination="0dG-fO-N6n" kind="show" identifier="showDetail" id="K1Z-ie-hHy"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="IiR-lg-lIe" id="pR2-Qq-mZm"/>
+                                    <outlet property="delegate" destination="IiR-lg-lIe" id="VP9-tU-7qO"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ekF-i0-uzU" firstAttribute="leading" secondItem="3DW-Fh-bIh" secondAttribute="leading" id="fky-6D-5qT"/>
+                            <constraint firstItem="3DW-Fh-bIh" firstAttribute="trailing" secondItem="ekF-i0-uzU" secondAttribute="trailing" id="hRT-bb-Iyk"/>
+                            <constraint firstItem="ekF-i0-uzU" firstAttribute="top" secondItem="3DW-Fh-bIh" secondAttribute="top" id="lw8-DK-xVU"/>
+                            <constraint firstItem="3DW-Fh-bIh" firstAttribute="bottom" secondItem="ekF-i0-uzU" secondAttribute="bottom" id="uEl-AR-hZ3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3DW-Fh-bIh"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="ekF-i0-uzU" id="J64-nK-R98"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O9R-z2-nGn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1965.5999999999999" y="-403.44827586206901"/>
+        </scene>
+        <!--RestaurantDetails-->
+        <scene sceneID="AjF-5y-pCp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RestaurantDetails" id="0dG-fO-N6n" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jmx-tZ-ZsA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2749.5999999999999" y="-407.0464767616192"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="american" width="88" height="64"/>
+        <image name="time-bg" width="68" height="27"/>
+        <namedColor name="LetsEat Dark Gray">
+            <color red="0.66699999570846558" green="0.66699999570846558" blue="0.66699999570846558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

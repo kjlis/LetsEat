@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="keF-A0-v58">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="dZp-pB-PWf">
+            <objects>
+                <viewController id="FKe-RK-qCR" customClass="MapViewController" customModule="LetsEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U90-Gh-BsI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Lrp-1C-o4G">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Lrp-1C-o4G" firstAttribute="top" secondItem="xbo-zM-cbw" secondAttribute="top" id="5Ld-7C-lc2"/>
+                            <constraint firstItem="xbo-zM-cbw" firstAttribute="bottom" secondItem="Lrp-1C-o4G" secondAttribute="bottom" id="9BH-T4-jzi"/>
+                            <constraint firstItem="xbo-zM-cbw" firstAttribute="trailing" secondItem="Lrp-1C-o4G" secondAttribute="trailing" id="tNC-Td-IuS"/>
+                            <constraint firstItem="Lrp-1C-o4G" firstAttribute="leading" secondItem="xbo-zM-cbw" secondAttribute="leading" id="tWN-Oe-NsE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xbo-zM-cbw"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JHb-I5-cpJ"/>
+                    <connections>
+                        <outlet property="mapView" destination="Lrp-1C-o4G" id="cLm-Fs-RXU"/>
+                        <segue destination="FaF-4U-Cvu" kind="show" identifier="showDetail" id="58n-nj-tK7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WLJ-wP-g83" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055.2" y="253.2233883058471"/>
+        </scene>
+        <!--RestaurantDetails-->
+        <scene sceneID="dys-Y1-Ab1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RestaurantDetails" id="FaF-4U-Cvu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qZ2-vU-ind" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1601" y="312"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="lfK-ka-F1o">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="keF-A0-v58" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="icon-map-off" selectedImage="icon-map-on" id="2Ku-uu-CBL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f5q-hm-xY6">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FKe-RK-qCR" kind="relationship" relationship="rootViewController" id="7oV-bG-txc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="axl-WO-sg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="253.2233883058471"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon-map-off" width="16" height="22"/>
+        <image name="icon-map-on" width="16" height="22"/>
+    </resources>
+</document>
