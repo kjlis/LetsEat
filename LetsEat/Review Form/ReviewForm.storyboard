@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Title-->
         <scene sceneID="xPL-DY-wx2">
             <objects>
-                <tableViewController id="5jf-io-dXc" sceneMemberID="viewController">
+                <tableViewController id="5jf-io-dXc" customClass="ReviewFormViewController" customModule="LetsEat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="51W-Av-h7g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,19 +38,20 @@
                                                     <color key="textColor" name="LetsEat Dark Gray"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0star" translatesAutoresizingMaskIntoConstraints="NO" id="x80-z7-aiA">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j11-Q1-eky" customClass="RatingView" customModule="LetsEat" customModuleProvider="target">
                                                     <rect key="frame" x="133" y="7" width="108" height="17"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="108" id="bz0-aY-cTC"/>
-                                                        <constraint firstAttribute="height" constant="17" id="mJJ-we-0N6"/>
+                                                        <constraint firstAttribute="height" constant="17" id="gg5-4v-qLp"/>
+                                                        <constraint firstAttribute="width" constant="108" id="lnW-5G-SXf"/>
                                                     </constraints>
-                                                </imageView>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="xmN-9g-IKB" firstAttribute="centerX" secondItem="kSm-9c-fm5" secondAttribute="centerX" id="EHg-Yz-OUB"/>
-                                                <constraint firstItem="x80-z7-aiA" firstAttribute="top" secondItem="kSm-9c-fm5" secondAttribute="top" constant="7" id="iGC-Mf-6Q0"/>
-                                                <constraint firstItem="x80-z7-aiA" firstAttribute="centerX" secondItem="kSm-9c-fm5" secondAttribute="centerX" id="j3F-kx-4uu"/>
-                                                <constraint firstItem="xmN-9g-IKB" firstAttribute="top" secondItem="x80-z7-aiA" secondAttribute="bottom" constant="1" id="meN-VW-wmv"/>
+                                                <constraint firstItem="xmN-9g-IKB" firstAttribute="top" secondItem="j11-Q1-eky" secondAttribute="bottom" constant="1" id="Ijv-cC-IoF"/>
+                                                <constraint firstItem="j11-Q1-eky" firstAttribute="top" secondItem="kSm-9c-fm5" secondAttribute="top" constant="7" id="XeU-YM-qcS"/>
+                                                <constraint firstItem="j11-Q1-eky" firstAttribute="centerX" secondItem="kSm-9c-fm5" secondAttribute="centerX" id="fTJ-7B-V3q"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -132,9 +133,27 @@
                             <outlet property="delegate" destination="5jf-io-dXc" id="OFP-6h-Ejd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="tjC-HA-TUv"/>
+                    <navigationItem key="navigationItem" title="Title" id="5JI-Ii-8eO">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Xa2-iC-V9p">
+                            <connections>
+                                <segue destination="9Ay-dF-iCy" kind="unwind" unwindAction="unwindReviewCancelWithSegue:" id="e4l-92-e1D"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="925-1H-5PF">
+                            <connections>
+                                <action selector="onSaveTapped:" destination="5jf-io-dXc" id="4fW-0o-aP7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ratingView" destination="j11-Q1-eky" id="OMR-xq-gxc"/>
+                        <outlet property="tfName" destination="aWk-kI-G8f" id="5YW-6p-IDE"/>
+                        <outlet property="tfTitle" destination="7jg-mu-vwh" id="XsM-si-3aV"/>
+                        <outlet property="tvReview" destination="h6e-4x-r3u" id="iQf-kO-uvg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pLc-0i-7qR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="9Ay-dF-iCy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4812" y="111"/>
         </scene>
@@ -156,7 +175,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="0star" width="226" height="38"/>
         <namedColor name="LetsEat Dark Gray">
             <color red="0.66699999570846558" green="0.66699999570846558" blue="0.66699999570846558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
