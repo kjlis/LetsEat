@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uYe-sN-e3U">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,9 +14,9 @@
         <!--Photo Filter View-->
         <scene sceneID="t4U-Ur-r7f">
             <objects>
-                <viewController title="Photo Filter View" id="foD-Hp-F76" sceneMemberID="viewController">
+                <viewController title="Photo Filter View" id="foD-Hp-F76" customClass="PhotoFilterViewController" customModule="LetsEat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YkT-5u-AQe">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="79r-aU-WVf">
@@ -31,7 +35,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2LB-65-3ch">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filterCell" id="2LB-65-3ch" customClass="FilterCell" customModule="LetsEat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="116" height="203"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -63,6 +67,10 @@
                                             <constraint firstAttribute="trailing" secondItem="WM3-Mk-RiS" secondAttribute="trailing" id="u6Y-or-X11"/>
                                             <constraint firstItem="ACf-Jh-tU7" firstAttribute="top" secondItem="WM3-Mk-RiS" secondAttribute="bottom" constant="2" id="zSl-gp-Bu7"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="imgThumb" destination="WM3-Mk-RiS" id="sww-sZ-fSE"/>
+                                            <outlet property="lblName" destination="ACf-Jh-tU7" id="HM9-f5-pWe"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -81,14 +89,23 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="WsY-Td-WmO">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nJd-Sl-hpg"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nJd-Sl-hpg">
+                            <connections>
+                                <segue destination="tHk-u2-J7s" kind="unwind" unwindAction="unwindReviewCancelWithSegue:" id="imz-lP-0X1"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="save" id="PYg-v7-VMM"/>
                             <barButtonItem title="Item" image="icon-photo" id="2lB-C2-jhZ"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="1i0-td-fZO" id="6rI-oP-Jus"/>
+                        <outlet property="imgExample" destination="79r-aU-WVf" id="wZd-y8-bfD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zyF-7o-XHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tHk-u2-J7s" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4799" y="-790"/>
         </scene>
@@ -97,7 +114,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uYe-sN-e3U" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qhh-ZY-ybQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="qhh-ZY-ybQ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
